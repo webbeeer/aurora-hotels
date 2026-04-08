@@ -1,0 +1,637 @@
+:root{
+    --marine: #001226;
+    --golden: #c5a059;
+    --ink:    #0e0e0e;
+    --paper:  #f7f4ef;
+    --gold:   #b89a5a;
+    --muted:  #7a7570;
+    --border: #e2ddd6;
+    --fontbg: 'DM Sans';
+    --font: "Cormorant Garamond";
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fontbg);
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.navbar-aurora{
+    background-color: var(--marine) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navLinkAurora:hover{
+    cursor: pointer;
+    color: var(--golden) !important;
+}
+
+.logo-img{
+    height: 50px;
+    width: auto;
+}
+
+.brand-text-container{
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    padding-left: 1rem;
+}
+
+.brand-name{
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.brand-subtitle{
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: var(--golden); 
+    text-transform: uppercase;
+}
+
+.navLinkAurora{
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    transition: color 0.3s ease;
+}
+
+.user-icon-aurora{
+    color: var(--golden) !important;
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+}
+
+.user-icon-aurora:hover{
+    transform: scale(1.1);
+}
+
+.hero img{
+    height: 65vh;
+    object-fit: cover;
+    object-position: 100% 50%;
+    filter: brightness(0.6) contrast(1.15) saturate(1.1);
+}
+
+.searchbar .row {
+    padding: 1.2rem 0.5rem !important; /* height */
+    border-radius: .875rem;
+}
+
+.searchbar.container{
+    max-width: 60% !important;
+    width: 100% !important;
+    margin-top: -50px;
+    position: relative;
+}
+
+.searchbar label.section-label{
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin-bottom: 2px;
+}
+
+.searchbar .form-select,
+.searchbar .form-control{
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.searchbar .form-select:focus,
+.searchbar .form-control:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.searchbar .guest-toggle-text{
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.searchbar .dropdown-toggle{
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.searchbar .dropdown-menu{
+    min-width: 320px;
+    border-radius: 20px;
+    border: none;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+.searchbar .guest-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.searchbar .guest-row small {
+    color: #6c757d;
+}
+
+.searchbar .qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.searchbar .qty-controls .btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.searchbar .qty-controls .btn:hover {
+    background-color: var(--marine);
+    color: white;
+    border-color: var(--marine);
+}
+
+.searchbar .btn-search {
+    background-color: var(--marine);
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.searchbar .btn-search:hover {
+    background-color: #00264d;
+    color: #fff;
+}
+
+.page-header {
+    padding: 3rem 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-family: var(--font);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: var(--accent);
+}
+
+.page-header p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 0.4rem;
+    font-weight: 300;
+}
+
+.hotelCard .card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 0.5px solid #e5e5e5;
+}
+
+.hotelCard .card-img-wrapper {
+    position: relative;
+}
+
+.hotelCard .card-img-top {
+    height: 260px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.hotelCard .badge-rating {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 11px;
+    padding: 3px 10px;
+}
+
+.hotelCard .badge-rating {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    padding: 4px 10px;
+}
+
+.hotelCard .card-body {
+    padding: 14px 16px 16px;
+}
+
+.hotelCard .card-location {
+    font-size: 11px;
+    color: #888;
+    margin: 0 0 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hotelCard .card-title {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 6px;
+}
+
+.hotelCard .card-description {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 14px;
+    line-height: 1.5;
+}
+
+.hotelCard .card-footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#map { 
+    height: 580px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#maps h1{
+    text-align: center;
+    margin: 5px;
+}
+
+/* Map PopUp*/
+
+.customPopUp{
+    min-width: 180px;
+}
+
+.customPopUp h5{
+    margin: 0 0 5px 0; 
+    font-size: 16px
+}
+
+#cartPayment {
+    border: 0;
+    background-color: rgb(0, 65, 5);
+    color: white;
+    padding: 10px;
+    border-radius: .875rem;
+    font-weight: bold;
+}
+
+#emptyCart{
+    border: 0;
+    background-color: rgb(159, 2, 2);
+    color: white;
+    padding: 10px;
+    border-radius: .875rem;
+    font-weight: bold;
+}
+
+/* Room Modal */
+.roomModalCard {
+    border: 0.5px solid #e5e5e5 !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: none !important;
+}
+
+.roomModalCard .card-img-top,
+.roomImageContainer img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.roomImageContainer {
+    overflow: hidden;
+    height: 250px;
+}
+
+.price-tag {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Payment Modal*/
+
+#staticBackdrop .modal-content {
+    background-color: #2b2b2b; 
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 12px;
+}
+
+#staticBackdrop .modal-header {
+    border-bottom: 1px solid #444;
+}
+
+#staticBackdrop .modal-title {
+    font-family: var(--font);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#staticBackdrop .btn-close {
+    filter: invert(1); 
+}
+
+.reservation-form h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #a0a0a0;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 4px;
+    font-weight: 600;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.reservation-form label {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+    color: #efefef;
+}
+
+.reservation-form input, 
+.reservation-form select, 
+.reservation-form textarea {
+    background-color: #333 !important;
+    border: 1px solid #444 !important;
+    border-radius: 6px !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    color: #fff !important;
+    font-size: 0.9rem;
+    min-height: auto !important;
+}
+
+.reservation-form input::placeholder {
+    color: #666;
+}
+
+.reservation-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+#staticBackdrop .modal-body {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+#staticBackdrop .btn-primary {
+    background-color: transparent;
+    border: 1px solid #555;
+    color: white;
+    padding: 6px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+#staticBackdrop .btn-primary:hover {
+    background-color: #fff;
+    color: #1e1e1e;
+}
+
+#staticBackdrop .modal-footer {
+    border-top: 1px solid #444;
+    padding: 20px;
+}
+
+#staticBackdrop .btn-secondary {
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    font-size: 0.8rem;
+    text-decoration: underline;
+}
+
+/* Cart Toast */
+
+#cartToast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    background: #212529;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 14px;   
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#cartToast.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Footer */
+
+.footer-aurora {
+    background-color: var(--marine);
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.footer-aurora .footer-logo img {
+    height: 100px;
+    width: auto;
+}
+
+.footer-aurora .footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-aurora .footer-links a {
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+.footer-aurora .footer-links a:hover {
+    color: var(--golden);
+}
+
+.footer-aurora .para{
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-aurora h6 {
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--golden) !important;
+}
+
+.footer-aurora .footer-logo h5 {
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+}
+
+.footer-aurora .footer-logo p {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: var(--golden) !important;
+    opacity: 0.7;
+}
+
+.footer-aurora .newsletter-group .form-control {
+    border-color: rgba(255, 255, 255, 0.15);
+    font-size: 13px;
+    border-radius: 0;
+}
+
+.footer-aurora .newsletter-group .form-control:focus {
+    box-shadow: none;
+    border-color: var(--golden);
+}
+
+.footer-aurora .newsletter-group .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 13px;
+}
+
+.footer-aurora .newsletter-group .btn {
+    border-color: rgba(255, 255, 255, 0.15);
+    color: var(--golden);
+    font-size: 12px;
+    letter-spacing: 2px;
+    border-radius: 0;
+    transition: all 0.2s ease;
+}
+
+.footer-aurora .newsletter-group .btn:hover {
+    background-color: var(--golden);
+    border-color: var(--golden);
+    color: var(--marine);
+}
+
+.footer-aurora .socialIcons a {
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.footer-aurora .socialIcons a:hover {
+    color: var(--golden) !important;
+    cursor: pointer;
+}
+
+.footer-aurora .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 1.2rem 0;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .page-header { padding: 2rem 1.2rem 1.2rem; }
+    .hotel-grid { padding: 0 1.2rem 3rem; gap: 1.2rem; }
+    .drawer__body { padding: 1.2rem; }
+    .drawer__header { padding: 1.4rem 1.2rem 1rem; }
+}
+
+.searchbar.container {
+    max-width: 90% !important; 
+    margin-top: -30px;
+}
+
+@media (min-width: 1200px) {
+    .searchbar.container {
+    max-width: 60% !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .searchbar .row {
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: 1rem !important;
+}
+
+.searchbar .border-end {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.searchbar .btn-search {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.searchbar .col-auto {
+    width: 100%;
+}
+
+#map {
+    width: 95%;
+    height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .room-modal-card {
+    margin-bottom: 1rem;
+}
+
+.brand-name {
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+}
+
+.footer-aurora{
+    text-align: center;
+    }
+}
+
+.hotelGrid {
+    padding: 0 15px;
+}

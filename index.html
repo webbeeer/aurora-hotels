@@ -1,0 +1,348 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+</head>
+
+<body onload="getLocation()">
+
+<nav class="navbar navbar-expand-lg navbar-aurora py-3" data-bs-theme="dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="img/logo.png" alt="Logo" class="logo-img me-3">
+            <div class="brand-text-container d-flex flex-column">
+                <span class="brand-name">AURORA</span>
+                <span class="brand-subtitle">Hotels & Resorts</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link navLinkAurora" href="#hero">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navLinkAurora" href="#hotelsHeader">ACCOMMODATIONS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navLinkAurora" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">BOOKING CART</a>
+                </li>
+                <li class="nav-item ms-lg-3">
+                    <div class="dropdown">
+                        <a class="nav-link user-icon-aurora" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" style="cursor: pointer;">My Account</a></li>
+                            <li><a class="dropdown-item" style="cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHistory">History</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" style="color: rgb(191, 3, 3); cursor: pointer;">Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid p-0">
+  <section class="hero">
+      <img src="img/bg.jpg" class="img-fluid w-100" alt="Hotel View">
+
+<div class="searchbar container">
+  <div class="row g-0 align-items-center bg-white shadow-lg p-2 border">
+    <div class="col px-4 border-end">
+      <label class="section-label">Where</label>
+      <select class="form-select">
+        <option>Japan</option>
+        <option>France</option>
+        <option>United Arab Emirates</option>
+        <option>Brazil</option>
+        <option>Singapore</option>
+        <option>USA</option>
+      </select>
+    </div>
+    <div class="col-auto px-4 border-end">
+      <label class="section-label">WHEN</label>
+      <div class="d-flex align-items-center gap-2">
+        <input type="date" class="form-control form-control-sm" id="searchCheckIn" style="width: 140px;" />
+        <span><i class="bi bi-arrow-right"></i></span>
+        <input type="date" class="form-control form-control-sm" id="searchCheckOut" style="width: 140px;" />
+      </div>
+    </div>
+    <div class="col px-4">
+      <div class="dropdown">
+        <div class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+          <label class="section-label">Who</label>
+          <span class="guest-toggle-text">Add Guests</span>
+        </div>
+        <ul class="dropdown-menu p-4">
+          <li class="guest-row">
+            <div>
+              <strong>Adults</strong><br>
+              <small>Ages 14 or above</small>
+            </div>
+            <div class="qty-controls">
+              <button type="button" class="btn btn-outline-secondary">-</button>
+              <span id="adultsQty">1</span>
+              <button type="button" class="btn btn-outline-secondary">+</button>
+            </div>
+          </li>
+          <li class="guest-row">
+            <div>
+              <strong>Children</strong><br>
+              <small>Ages 2-13</small>
+            </div>
+            <div class="qty-controls">
+              <button type="button" class="btn btn-outline-secondary">-</button>
+              <span id="childrenQty">0</span>
+              <button type="button" class="btn btn-outline-secondary">+</button>
+            </div>
+          </li>
+          <li class="guest-row">
+            <div>
+              <strong>Infants</strong><br>
+              <small>Under 2</small>
+            </div>
+            <div class="qty-controls">
+              <button type="button" class="btn btn-outline-secondary">-</button>
+              <span id="infantsQty">0</span>
+              <button type="button" class="btn btn-outline-secondary">+</button>
+            </div>
+          </li>
+          <li class="guest-row">
+            <div>
+              <strong>Pets</strong>
+            </div>
+            <div class="qty-controls">
+              <button type="button" class="btn btn-outline-secondary">-</button>
+              <span id="petsQty">0</span>
+              <button type="button" class="btn btn-outline-secondary">+</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button class="btn-search" id="search">SEARCH</button>
+    </div>
+  </div>
+</div>
+
+<div class="page-header" id="hotelsHeader">
+    <h1>Discover Our Hotels</h1>
+    <p>Select a hotel to explore available rooms</p>
+</div>
+
+<div class="hotelGrid" id="hotelGrid"></div>
+
+<section id="maps">
+    <h1>See our locations</h1>
+    <div id="map"></div>
+  </section>
+</div>
+
+<div class="modal fade" id="roomsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content border-0" style="border-radius: 16px; overflow: hidden;">
+      <div class="modal-header border-0 px-4 pt-4 pb-2">
+        <h5 class="modal-title fw-bold" id="roomsModalTitle">Available Rooms</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body px-4 pb-4">
+        <div class="row g-3" id="roomsContainer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirm Reservation</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="reservation-form">
+                    <h2>Guest Information</h2>
+                    <div class="row g-3">
+                        <div class="col-6 field-group">
+                            <label>First name</label>
+                            <input type="text" id="firstName" placeholder="Henrique" required>
+                        </div>
+                        <div class="col-6 field-group">
+                            <label>Last name</label>
+                            <input type="text" id="lastName" placeholder="Webber" required>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label>Email</label>
+                        <input type="email" id="email" placeholder="webber@example.com" required>
+                    </div>
+                    <div class="field-group">
+                        <label>Phone</label>
+                        <input type="tel" id="tel" placeholder="(999) 000-0000" required>
+                    </div>
+                    <h2>Stay Details</h2>
+                    <div class="row g-3">
+                        <div class="col-6 field-group">
+                            <label>Check-in</label>
+                            <input type="date" id="modalCheckIn">
+                        </div>
+                        <div class="col-6 field-group">
+                            <label>Check-out</label>
+                            <input type="date" id="modalCheckOut">
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-6 field-group">
+                            <label>Adults</label>
+                            <select class="form-select">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                            </select>
+                        </div>
+                        <div class="col-6 field-group">
+                            <label>Children</label>
+                            <select class="form-select">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <h2>Payment</h2>
+                    <div class="field-group">
+                        <label>Cardholder name</label>
+                        <input type="text" id="cardholder" placeholder="Henrique Webber" required>
+                    </div>
+                    <div class="field-group">
+                        <label>Card number</label>
+                        <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" required>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-6 field-group">
+                            <label>Expiry</label>
+                            <input type="text" id="expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="col-6 field-group">
+                            <label>CVV</label>
+                            <input type="text" id="cvv" placeholder="000" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Booking Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+
+<div class="offcanvas-body">
+      <div class="booked"></div>
+      <button id="emptyCart" data-bs-toggle="modal">Empty Cart</button>
+      <button id="cartPayment" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Go to Payment</button>
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasHistory" aria-labelledby="offcanvasHistoryLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasHistoryLabel">Booking History</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+<div class="offcanvas-body">
+  <div id="historyContainer"></div>
+  </div>
+</div>
+
+<footer class="footer-aurora pt-5 mt-5">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-logo mb-3">
+                    <img src="img/logo.png" alt="Aurora Logo" height="50">
+                    <h5 class="text-white mt-2 fw-bold tracking-widest">AURORA</h5>
+                    <p class="text-white-50 small">HOTELS & RESORTS</p>
+                </div>
+                <p class="text small pe-lg-5 para">
+                    Experience the ultimate in luxury and comfort across our exclusive locations worldwide. Your journey to paradise begins with us.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-white fw-bold mb-4">Explore</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Accommodations</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-white fw-bold mb-4">Support</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h6 class="text-white fw-bold mb-4">Newsletter</h6>
+                <p class="text small mb-3 para">Join our club for exclusive benefits and updates.</p>
+                <div class="input-group mb-3 newsletter-group">
+                    <input type="email" class="form-control bg-transparent text-white border-secondary" placeholder="Your Email">
+                    <button class="btn btn-outline-light" type="button">Join</button>
+                </div>
+                <div class="socialIcons pt-2">
+                    <a class="me-3 text-white-50"><i class="bi bi-instagram"></i></a>
+                    <a class="me-3 text-white-50"><i class="bi bi-facebook"></i></a>
+                    <a class="me-3 text-white-50"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom py-3 border-top border-secondary border-opacity-25 mt-4">
+        <div class="container text-center">
+            <p class="text-white-50 mb-0 small">&copy; 2026 Aurora Hotels & Resorts. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+crossorigin=""></script>
+<script src="js/script.js"></script>
+</body>
+</html>

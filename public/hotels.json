@@ -1,0 +1,147 @@
+[
+  {
+    "id": 1,
+    "name": "Burj Al Arab Jumeirah",
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "lat": 25.1412,
+    "lng": 55.1852,
+    "rating": 4.9,
+    "description": "A global icon of Arabian luxury, featuring chauffeur-driven Rolls-Royces and a private beach.",
+    "image": "img/burj.jpg",
+    "petFriendly": "No"
+  },
+  {
+    "id": 2,
+    "name": "The Ritz Paris",
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.8681,
+    "lng": 2.3289,
+    "rating": 4.8,
+    "description": "A legendary palace in the heart of Paris, offering refined French art de vivre and gastronomy.",
+    "image": "img/theritz.jpg",
+    "petFriendly": "Yes"
+  },
+  {
+    "id": 3,
+    "name": "Aman Tokyo",
+    "city": "Tokyo",
+    "country": "Japan",
+    "lat": 35.6848,
+    "lng": 139.7651,
+    "rating": 4.9,
+    "description": "An urban sanctuary high above Otemachi Forest, blending traditional Zen design with modern luxury.",
+    "image": "img/aman.jpg",
+    "petFriendly": "No"
+  },
+  {
+    "id": 4,
+    "name": "Belmond Hotel das Cataratas",
+    "city": "Foz do Iguaçu",
+    "country": "Brazil",
+    "lat": -25.6886,
+    "lng": -54.4400,
+    "rating": 4.9,
+    "description": "The only hotel located inside the Iguaçu National Park, offering exclusive views of the falls.",
+    "image": "img/belmond.jpg",
+    "petFriendly": "Yes"
+  },
+  {
+    "id": 5,
+    "name": "Marina Bay Sands",
+    "city": "Singapore",
+    "country": "Singapore",
+    "lat": 1.2847,
+    "lng": 103.8610,
+    "rating": 4.7,
+    "description": "World-renowned for its rooftop infinity pool and integrated resort entertainment.",
+    "image": "img/marina.jpg",
+    "petFriendly": "No"
+  },
+  {
+    "id": 6,
+    "name": "The Plaza Hotel",
+    "city": "New York",
+    "country": "USA",
+    "lat": 40.7645,
+    "lng": -73.9744,
+    "rating": 4.6,
+    "description": "A Fifth Avenue landmark providing a timeless experience of New York glamour and elegance.",
+    "image": "img/theplaza.jpg",
+    "petFriendly": "Yes"
+  },
+  {
+    "id": 7,
+    "name": "Giraffe Manor",
+    "city": "Nairobi",
+    "country": "Kenya",
+    "lat": -1.3764,
+    "lng": 36.7444,
+    "rating": 4.8,
+    "description": "An exclusive boutique hotel where resident Rothschild's giraffes visit you at the breakfast table.",
+    "image": "img/giraffe.jpg",
+    "petFriendly": "No"
+  },
+  {
+    "id": 8,
+    "name": "Hotel Villa Honegg",
+    "city": "Ennetbürgen",
+    "country": "Switzerland",
+    "lat": 47.0053,
+    "lng": 8.4031,
+    "rating": 4.9,
+    "description": "A luxurious private retreat with a world-famous heated infinity pool overlooking Lake Lucerne.",
+    "image": "img/villa.jpg",
+    "petFriendly": "Yes"
+  },
+  {
+    "id": 9,
+    "name": "La Mamounia",
+    "city": "Marrakech",
+    "country": "Morocco",
+    "lat": 31.6218,
+    "lng": -7.9991,
+    "rating": 4.7,
+    "description": "An Arabian-Andalusian palace known for its majestic gardens and traditional Moroccan craftsmanship.",
+    "image": "img/la.jpg",
+    "petFriendly": "No"
+  },
+  {
+    "id": 10,
+    "name": "The Savoy",
+    "city": "London",
+    "country": "UK",
+    "lat": 51.5104,
+    "lng": -0.1204,
+    "rating": 4.8,
+    "description": "The Britain's most famous hotel, offering Edwardian elegance on the banks of the River Thames.",
+    "image": "img/thesavoy.jpg",
+    "petFriendly": "Yes"
+  },
+  {
+    "id": 11,
+    "name": "Four Seasons Resort Bali at Sayan",
+    "city": "Ubud",
+    "country": "Indonesia",
+    "lat": -8.4912,
+    "lng": 115.2447,
+    "rating": 4.9,
+    "description": "A tropical paradise hidden in the Ayung River valley, accessible by a dramatic suspension bridge.",
+    "image": "img/fourseasons.jpg",
+    "petFriendly": "No"
+  },
+  {
+    "id": 12,
+    "name": "Copacabana Palace",
+    "city": "Rio de Janeiro",
+    "country": "Brazil",
+    "lat": -22.9672,
+    "lng": -43.1789,
+    "rating": 4.8,
+    "description": "The crown jewel of Rio's coastline, famous for its Art Deco glamour and legendary New Year's Eve parties.",
+    "image": "img/palace.jpg",
+    "petFriendly": "Yes"
+  }
+
+]
